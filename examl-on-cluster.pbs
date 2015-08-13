@@ -1,0 +1,25 @@
+#!/bin/bash 
+## Lines preceded by "#PBS" are directives for Torque/PBS
+## this line tells Torque the name of the batch job
+#PBS -N examl_lg-nomp-fat
+## this line tells Torque which queue to submit to
+## see /INFO/queus.txt for a description of available queues
+#PBS -q longfat
+## resource list:
+##  requests 1 node and 12 processors per node
+#PBS -l nodes=1:ppn=32
+##  requests 96 hrs 
+#PBS -l walltime=96:00:00
+## tell Torque which is the working directory for your job
+#PBS -d WORKING_PATH/
+## tell Torque which directory or file to use for batch script output
+#PBS -o WORKING_PATH/log
+## tell Torque which directory or file to use for batch script errors
+#PBS -e WORKING_PATH/log
+
+# Load any modules needed to run your software
+# see /INFO/modules-howto.txt for a mini-howto on Modules
+
+# execute program here:
+
+mpiexec -np 32 BINARY_PATH/examl -s alignment-internal.binary -m GAMMA -n examl -t fasttree.newick >> spew
