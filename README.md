@@ -16,6 +16,9 @@ some reason).
 
 ### software used:
 fasttree: http://www.microbesonline.org/fasttree/
+
 examl: http://sco.h-its.org/exelixis/web/software/examl/index.html
+
 lazarus: https://code.google.com/p/project-lazarus/
+
 paml: http://abacus.gene.ucl.ac.uk/software/paml.html
